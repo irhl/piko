@@ -1,2 +1,47 @@
-#!/bin/sh
-# coming soon!
+#!/usr/bin/env bash
+
+bar() {
+    # clean then deploy
+    printf '\e[?25l\e[1J\e[1;%sr'
+    stty -echo
+
+    printf '\e2\e[%sH\e[7;1m%*s\r%s %s\e[%sH' \
+           "$LINES" \
+           "$COLUMNS" "" "" \
+           "$title - $artist"
+}
+
+plunger() {
+    img2sixel "/tmp/abc.png" \
+    -w 165 -h 165 \
+    --builtin-palette=xterm256 \
+
+    mpv --no-audio-display \
+    --msg-level=all=no,statusline=debug "$@"
+
+    # EXIT
+    printf '\e[?25h'
+    stty echo
+}
+
+main() {
+    yes | ffmpeg -i \
+    "$@" -f ffmetadata /tmp/list.txt \
+    -- /tmp/abc.png \
+
+    ## file tags from tmp/list.txt
+	while IFS='=' read -r xx yy; do
+                    case $xx in
+                        title) title=$yy ;;
+		 	artist) artist=$yy ;;
+			album) album=$yy ;;
+			genre) genre=$yy ;;
+			date) date=$yy ;;
+                    esac
+                done < /tmp/list.txt
+
+    bar
+    plunger "$@"
+}
+
+main "$@"
