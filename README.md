@@ -8,7 +8,7 @@ FEBRUARY 28, 2022
    '- -'  
 </pre>
 ## Preview 
-![img](https://user-images.githubusercontent.com/58134273/156894621-b8cb07de-3f09-4728-a68b-b109b8600e45.gif)
+![img](https://user-images.githubusercontent.com/58134273/156894788-c982105b-81f5-49db-b6a3-91eff23f2bd6.gif)
 
 ### Usage
 `./pretzel *.mp3`
