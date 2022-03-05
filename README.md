@@ -16,5 +16,6 @@
 - ffmpeg </br>
 - mpv </br>
 - libsixel/chafa </br>
+
 https://github.com/galatolofederico/st-sixel </br>
 https://github.com/hpjansson/chafa/ </br>
