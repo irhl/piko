@@ -1,5 +1,4 @@
 ## pretzel (p)
-FEBRUARY 28, 2022
 
 <pre>
   ,-._.-, 
