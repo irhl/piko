@@ -1,5 +1,5 @@
 ## pretzel (p)
-ASCII ART FEBRUARY 28, 2022
+FEBRUARY 28, 2022
 
 <pre>
   ,-._.-, 
