@@ -6,7 +6,7 @@
    '- -'  
 </pre>
 
-A music playing TUI program often used for ricing purposes, it plays on mpv and demands only few dependencies unlike other independent music players that require another bullshit installation of 50+ different packages into the system and telling you to pass a music server which is exhausting and infuriating to setup more configuration.
+A music playing TUI program often used for ricing purposes, the program plays on mpv and demands only few dependencies unlike other independent music players that require another bullshit installation of 50+ different packages into the system and telling you to pass a music server which is exhausting and infuriating to setup more configuration.
 
 ## Preview 
 ![img](https://user-images.githubusercontent.com/58134273/156895001-138d294c-0cc2-4590-a6f0-01d1c5103c34.gif)
