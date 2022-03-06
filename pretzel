@@ -13,7 +13,7 @@ bar() {
 
 plunger() {
     img2sixel "/tmp/abc.png" \
-    -w 165 -h 165 \
+    -w 161 -h 156 \
     --builtin-palette=xterm256 \
 
     mpv --no-audio-display \
