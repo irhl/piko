@@ -29,8 +29,6 @@ Background of the terminal can be changed by writing another ascii art into back
 
  see: https://mpv.io/manual/stable/#options-term-osd-bar </br>
  
- 
-
 ## Dependencies
 - ffmpeg </br>
 - mpv </br>
