@@ -4,7 +4,8 @@ bar() {
     # clean then deploy
     printf '\e[?25l\e[1J\e[1;%sr'
     stty -echo
-
+    landscape
+    
     printf '\e2\e[%sH\e[7;1m%*s\r%s %s\e[%sH' \
            "$LINES" \
            "$COLUMNS" "" "" \
@@ -22,6 +23,10 @@ plunger() {
     # EXIT
     printf '\e[?25h'
     stty echo
+}
+
+landscape() {
+    cat background.xml
 }
 
 main() {
