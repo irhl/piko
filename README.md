@@ -17,6 +17,8 @@ A music playing TUI program often used for ricing purposes, the program plays on
 ## Customization
  To edit the status of the time counter, paste this command to ~/.config/mpv/mpv.conf </br>
 `term-status-msg="\nAV: ${time-pos} / ${duration} (${percent-pos}%)"` </br>
+ 
+ see: https://mpv.io/manual/stable/#options-term-osd-bar </br>
 <pre>
                    \       /            _\/_
                      .-'-.              //o\  _\/_
@@ -27,8 +29,6 @@ jgs=- =- =-= =- = -  -===- -= - ."
 </pre>
 Background of the terminal can be changed by writing another ascii art into background.xml
 
- see: https://mpv.io/manual/stable/#options-term-osd-bar </br>
- 
 ## Dependencies
 - ffmpeg </br>
 - mpv </br>
