@@ -6,7 +6,7 @@
    '- -'  
 </pre>
 
-A music playing TUI program often used for ricing purposes, the program plays on mpv and demands only few dependencies unlike other independent music players that require another bullshit installation of 50+ different packages into the system and telling you to pass a music server which is exhausting and infuriating to setup.
+A music playing TUI program often used for ricing purposes, the program plays on mpv and demands only few dependencies unlike other independent music players that require another bullshit installation of 50+ different packages into the system and telling you to pass a music server which is exhausting and infuriating to setup. Since most users have mpv and ffmpeg already installed, the configuration should be simple.
 
 ## Preview 
 ![img](https://user-images.githubusercontent.com/58134273/156930747-2b4f347f-3f7c-4538-9280-775d79cfd5c0.png)
