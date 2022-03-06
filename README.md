@@ -29,6 +29,18 @@ jgs=- =- =-= =- = -  -===- -= - ."
 </pre>
 Background of the terminal can be changed by writing another ascii art into background.xml
 
+## Images
+For anyone who's struggling, this shows the difference between libsixel and chafa. If you wish to stick with chafa, you can replace those lines inside the code. Any tool that allow images to display in the terminal such as w3m or ueberzug may be possible.
+<pre>
+plunger() {
+    img2sixel "/tmp/abc.png" \
+    -w 161 -h 156 \
+    --builtin-palette=xterm256 \
+    
+plunger() {
+    chafa "/tmp/abc.png" --size 18x18
+</pre>
+
 ## Dependencies
 - ffmpeg </br>
 - mpv </br>
