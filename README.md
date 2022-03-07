@@ -11,8 +11,17 @@ A music playing TUI program often used for ricing purposes, the program plays on
 ## Preview 
 ![img](https://user-images.githubusercontent.com/58134273/156930747-2b4f347f-3f7c-4538-9280-775d79cfd5c0.png)
 
+## Installation
+
+```
+git clone https://github.com/crittles/pretzel
+cd pretzel
+chmod +x ./pretzel
+./pretzel
+```
+
 ## Usage
-`./pretzel *.mp3`
+`pretzel *.mp3`
 
 ## Customization
  To edit the status of the time counter, paste this command to ~/.config/mpv/mpv.conf </br>
