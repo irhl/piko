@@ -17,7 +17,7 @@ A music playing TUI program often used for ricing purposes, the program plays on
 git clone https://github.com/crittles/pretzel
 cd pretzel
 chmod +x ./pretzel
-./pretzel
+./install
 ```
 
 ## Usage
