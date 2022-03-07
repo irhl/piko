@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# file
+FILE="pretzel"
+
+if [[ ! -f "./$FILE" ]]; then
+    echo "The 'pretzel' file script does not exist."
+    exit
+fi
+
+sudo cp ./$FILE /usr/bin
+
+echo "Installation complete, use 'pretzel' command in your terminal."
