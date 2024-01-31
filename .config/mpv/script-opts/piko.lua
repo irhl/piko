@@ -53,55 +53,53 @@ function canvas()
     -- sort collection of local variables based in the canvas list
     local read_ascii = home .. "/.config/mpv/ascii_art.txt"
     local ascii_art = "\27[90m" .. (get_ascii(read_ascii) or "") .. "\27[0m"
-
     local pause_icon = pause and 'x' or '>'
 
     local artist = "\27[31m" .. (metadata.artist or "") .. "\27[0m"
     local plist_counter = artist .. string.format(" [%d/%d]", plist_pos, plist_count)
-    local plist_padding = (" "):rep(COLUMNS - 7 - #plist_counter)
+    local plist_padding = (" "):rep(COLUMNS - 6 - #plist_counter)
 
+    local blocks = {"▓", "▓", "░"}
+    local colors = {"\27[31m", "\27[91m", "\27[37m"}
     local fill_width = math.floor(COLUMNS * (time_pos / duration))
-    local blocks = {"|", "=", "="}
-    local colors = {"\27[31m", "\27[31m", "\27[37m"}
-    local pbar = ""
 
+    local pbar = ""
     for i = 1, COLUMNS do
-        local block_index = i <= fill_width and 2 or i == fill_width + 1 and 1 or 3
-        pbar = pbar .. colors[block_index] .. blocks[block_index]
+        local bi = i <= fill_width and 2 or i == fill_width + 1 and 1 or 3
+        pbar = pbar .. colors[bi] .. blocks[bi]
     end
+    pbar = pbar .. "\27[0m"
 
     local tags = {
-        "\27[4m\27[90m" .. "2005",
-        "\27[4m\27[90m" .. "cottonball",
+        -- "\27[30-37", "\27[90-97"   fg: 8, 16
+	-- "\27[40-47", "\27[100-107" bg: 8, 16
+        "\27[47m\27[30m" .. "2005",
+        "\27[47m\27[30m" .. "cottonball",
         "\27[47m\27[30m" .. "vienna"
 
-    } tags = table.concat(tags, "\27[0m" .. " ")
+    } tags = table.concat(tags, "\27[0m" .. " ") .. "\27[0m"
 
-    -- "\27[s"   save cursor position
-    -- "27[999H" position cursor to bottom
-    -- "27[2J"   clear screen
-    -- "27[u"    restore cursor position
-    local canvas_list  = {
+    local canvas_list = {
+        -- "\27[s"   save cursor position
+        -- "27[999H" move cursor to bottom
+        -- "27[2J"   clear screen
+        -- "27[u"    restore cursor position
         "\27[s", "\27[999H", "\27[2J",
-        "%s\n\n%s\n%s\n\n%s %s / %s %s%s\n\n%s\n\n%s",
-        "\27[u"
+
+	ascii_art, "\n\n",
+        metadata.title or "", "\n",
+        metadata.album or "", "\n\n",
+
+        pause_icon, " ", timestamp(time_pos), " / ", timestamp(duration),
+        plist_padding, plist_counter, "\n\n",
+        pbar, "\n\n",
+	tags,
+
+	"\27[u"
 
     } canvas_list = table.concat(canvas_list)
 
-    local canvas_data = {
-        ascii_art,
-        metadata.title or "",
-        metadata.album or "",
-        pause_icon,
-        timestamp(time_pos),
-        timestamp(duration),
-        plist_padding,
-        plist_counter,
-        pbar,
-        tags
-    }
-
-    io.write(string.format(canvas_list, table.unpack(canvas_data)))
+    io.write(canvas_list)
     io.flush()
 end
 
