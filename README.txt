@@ -1,10 +1,6 @@
-piko
-====
-a simple wrapper for mpv that lets you do cool stuff
-to use mpv as a TUI music player.
-
-for a better experience, I recommend having a file manager
-with its file opener tool to run piko.
+piko is a pretty TUI wrapper for mpv that lets you do cool stuff
+to use mpv as a music player, to run piko you can bind it to the
+file opener tool of your favorite text-based file manager.
 
 Requirements:
 A term size of 20 lines, 56 columns above.
@@ -43,7 +39,6 @@ x 01:22 / 02:02             milly's car [7/11]
 2005 cottonball vienna
 
 
-Credits:
+this repo was a fork of fff, and was scrapped
+to have a better playback experience for mpv.
 • fff: https://github.com/dylanaraps/fff
-• pxltrm: https://github.com/dylanaraps/pxltrm
-• neofetch: https://github.com/dylanaraps/neofetch
