@@ -49,7 +49,7 @@ function makeup()
     -- fh/fw fill height, fill width
     local b  = {'  ', '  ', '  ',}
     local cc = {'\27[101m', '\27[102m', '\27[40m',}
-    local fh = math.floor(LINES * 0.40)
+    local fh = math.floor(LINES * 0.45)
 
     local meter = '┌──┐\n'
     for i = fh, 1, -1 do
