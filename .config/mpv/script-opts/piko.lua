@@ -47,13 +47,13 @@ function makeup()
     -- bi    block index
     -- cc    color codes
     -- fh/fw fill height, fill width
-    local b   = {'  ', '  '}
-    local cc = {'\27[101m', '\27[30m'}
-    local fh  = math.floor(LINES * 0.40)
+    local b  = {'  ', '  ', '  ',}
+    local cc = {'\27[101m', '\27[102m', '\27[40m',}
+    local fh = math.floor(LINES * 0.40)
 
     local meter = '┌──┐\n'
     for i = fh, 1, -1 do
-        local bi = (i <= fh * (volume / 100)) and 1 or 2
+        local bi = (i <= fh * (volume / 100)) and ((i > fh * 0.5) and 2 or 1) or 3
         meter = meter .. '│' .. cc[bi] .. b[bi] .. '\27[0m' .. '│\n'
     end
     meter = meter .. '├──┤\n│' .. indicator .. '│\n└──┘' .. '\27[0m'
@@ -99,9 +99,9 @@ function canvas()
                     math.floor(time_pos / 60), time_pos % 60,
                     math.floor(duration / 60), duration % 60)
 
-    local b   = {'|', '=', '='}
+    local b  = {'|', '=', '='}
     local cc = {'\27[31m', '\27[91m', '\27[37m'}
-    local fw  = math.floor(COLUMNS * (time_pos / duration))
+    local fw = math.floor(COLUMNS * (time_pos / duration))
 
     local pbar = ''
     for i = 1, COLUMNS do
